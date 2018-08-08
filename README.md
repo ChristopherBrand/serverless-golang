@@ -27,3 +27,9 @@ git clone https://github.com/ChristopherBrand/serverless-golang.git
 cd serverless-golang
 cp serverless-golang.ps1 ~\Documents\WindowsPowershell
 ```
+
+## Usage
+
+To use serverless-golang simply navigate to your project directory in Powershell and run the command `serverless-golang.ps1`
+
+You will then have a linux bash shell in Windows that will respond to all the serverless commands and allow you to properly build and deploy Golang serverless projects.
