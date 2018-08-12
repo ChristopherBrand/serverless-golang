@@ -33,3 +33,7 @@ cp serverless-golang.ps1 ~\Documents\WindowsPowershell
 To use serverless-golang simply navigate to your project directory in Powershell and run the command `serverless-golang.ps1`
 
 You will then have a linux bash shell in Windows that will respond to all the serverless commands and allow you to properly build and deploy Golang serverless projects.
+
+## Working With The Docker Image
+
+We maintain a prebuilt docker image in docker hub that the script will automatically pull. Should you have custom requirements you can make changes to the `Dockerfile` in the docker directory and run `build.ps1` to build the image to a standard name and tag that the serverless-golang script will automatically pick up.
