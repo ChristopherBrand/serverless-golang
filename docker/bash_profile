@@ -1,0 +1,20 @@
+
+function parse_git_branch() {
+        BRANCH=`git rev-parse --abbrev-ref HEAD 2> /dev/null`
+        if [ ! "${BRANCH}" == "" ]
+        then
+                echo "[${BRANCH}] "
+        else
+                echo ""
+        fi
+}
+
+function formatted_date() {
+        date +"%Y-%m-%d %H:%M:%S"
+}
+
+function current_dir() {
+        pwd
+}
+
+export PS1="\[\e[95m\]\u@\h\[\e[m\] \[\e[96m\]\`date +\"%Y-%m-%d %H:%M:%S\"\`\[\e[m\] \[\e[93m\]\`parse_git_branch\`\[\e[m\]\[\e[92m\]\`pwd\`\[\e[m\]\n\[\e[97m\]>\[\e[m\] "
