@@ -1,1 +1,2 @@
-docker build --no-cache -t serverless-framework-golang:latest .
+docker build --no-cache -t christopherbrand/serverless-framework-golang:latest .
+docker push christopherbrand/serverless-framework-golang:latest

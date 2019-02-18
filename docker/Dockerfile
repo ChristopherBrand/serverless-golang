@@ -11,6 +11,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
       curl \
       awscli \
       git \
+      ssh \
       wget && \
     npm install -g serverless && \
     export INSTALL_DIRECTORY=/usr/bin && \

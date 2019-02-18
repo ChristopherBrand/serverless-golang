@@ -1,11 +1,11 @@
 $cwd = (Get-Item -Path ".\").FullName
 
-christopherbrand/serverless-framework-golang:latest
 
 $image = "serverless-framework-golang:latest"
 $dockerHubImage = "christopherbrand/serverless-framework-golang:latest"
 $serverlessYML = "$($cwd)\serverless.yml"
 $awsConfig = "$($home)\.aws"
+$sshConfig = "$($home)\.ssh"
 $projectDir = (Split-Path (Split-Path "$serverlessYML" -Parent) -Leaf)
 
 # Verify that you are calling from a serverless framework project
@@ -42,5 +42,5 @@ if($running -eq "true") {
   if($running -eq "false") {
     docker rm -f $containerName
   }
-  docker run -it -v "$($awsConfig):/root/.aws" -v "$($cwd):/root/go/src/$($projectDir)" -w "/root/go/src/$($projectDir)" --name $containerName $image bash
+  docker run -it -v "$($sshConfig):/root/.ssh" -v "$($awsConfig):/root/.aws" -v "$($cwd):/root/go/src/$($projectDir)" -w "/root/go/src/$($projectDir)" --name $containerName $image bash
 }
