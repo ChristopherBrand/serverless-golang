@@ -1,6 +1,5 @@
 $cwd = (Get-Item -Path ".\").FullName
 
-
 $image = "serverless-framework-golang:latest"
 $dockerHubImage = "christopherbrand/serverless-framework-golang:latest"
 $serverlessYML = "$($cwd)\serverless.yml"
